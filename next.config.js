@@ -18,9 +18,5 @@ module.exports = {
     }
     return config;
   },
-  sassOptions: {
-    includePaths: [path.join(__dirname, 'src/styles')],
-    prependData: `@import "./lib/mixins.scss"; @import "./lib/variables.scss";`,
-  },
   trailingSlash: true,
 };

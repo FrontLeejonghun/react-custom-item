@@ -14,12 +14,6 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": "./src",
-    "types": [
-      "jest",
-      "cypress",
-      "@testing-library/cypress",
-      "cypress-react-selector"
-    ]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
