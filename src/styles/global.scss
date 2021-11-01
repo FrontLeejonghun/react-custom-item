@@ -1,0 +1,19 @@
+@import './lib/reset';
+@import './lib/fonts';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+#__next,
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  line-height: 1.8;
+}
+
