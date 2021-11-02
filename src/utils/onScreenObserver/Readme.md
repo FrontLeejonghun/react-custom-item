@@ -1,4 +1,5 @@
 #onScreenObserver
+# onScreenObserver
 
 * **require dependencies**
   * **eventemitter3**
