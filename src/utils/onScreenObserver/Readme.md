@@ -1,4 +1,3 @@
-#onScreenObserver
 # onScreenObserver
 
 * **require dependencies**
