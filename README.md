@@ -3,6 +3,7 @@
 ##### 테스트를 해보실수 있게, next의 템플릿을 사용하여 프로젝트 구성을 하였습니다.
 * hook
    * [useResize Hook](https://github.com/FrontLeejonghun/react-custom-hook-util/tree/main/src/hooks/useResize)
+   * [useScrollLock Hook](https://github.com/FrontLeejonghun/react-custom-hook-util/tree/main/src/hooks/useScrollLock)
 * util  
    *  [notification util](https://github.com/FrontLeejonghun/react-custom-hook-util/tree/main/src/utils/notification)
    *  [onScreenObserver](https://github.com/FrontLeejonghun/react-custom-hook-util/tree/main/src/utils/onScreenObserver)
