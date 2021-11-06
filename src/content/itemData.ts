@@ -33,10 +33,10 @@ const itemData = [
     key: 'components',
     itemList: [
       {
-        key: 'UseResize',
-        redirect: 'UseResizePage',
+        key: '컴포넌트',
+        redirect: '/',
 
-        description: '컴포넌트',
+        description: '작업예정입니다',
       },
     ],
   },
