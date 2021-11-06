@@ -11,7 +11,7 @@
         options: {}, //optional
     };
 
-    const { eventEmitterInstance, injectObserve, unObserve } = onScreenObserver(payload);
+    const eventEmitterInstance = onScreenObserver(payload);
 
     eventEmitterInstance.on('onScreen', (entries: IntersectionObserverEntry) => {
       if (entries.isIntersecting) {
@@ -27,7 +27,7 @@
         options: {}, //optional
     };
 
-    const { eventEmitterInstance, injectObserve, unObserve } = onScreenObserver(payload);
+    const eventEmitterInstance = onScreenObserver(payload);
 
     eventEmitterInstance.on('onScreen', (entries: IntersectionObserverEntry) => {
       if (entries.isIntersecting) {
@@ -35,13 +35,6 @@
       }
     });
 
-
-## If You want another DOM Detect 
-    injectObserve()
-    //shoud update payload dom need parameter
-
-## If You want Remover IntersectionObserver
-    unObserve()
 
 ## Type
 
