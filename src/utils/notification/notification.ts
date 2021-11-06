@@ -16,20 +16,18 @@ interface NotificationOptions {
   vibrate?: VibratePattern;
 }
 
-const notification = (notificationOptions: NotificationOptions) => {
-  console.log(notificationOptions);
+export const notification = () => {
   let isSupport = true;
 
   if (typeof window !== 'undefined') {
     if (window.Notification === undefined) isSupport = false;
   }
 
-  const onNotification = async () => {
+  const onNotification = async (notificationOptions: NotificationOptions) => {
     if (Notification.permission !== 'denied') await Notification.requestPermission();
 
-    if (Notification.permission === 'granted') new Notification(notificationOptions.title, notificationOptions);
+    if (Notification.permission === 'granted')
+      new Notification(notificationOptions.title, notificationOptions);
   };
   return { isSupport, onNotification };
 };
-
-export default notification;

@@ -18,9 +18,9 @@ const itemData = [
     key: 'util',
     itemList: [
       {
-        key: 'UseResize',
-        description: '유틸',
-        redirect: 'UseResizePage',
+        key: 'Notification',
+        description: '브라우저 노티피케이션을 실행 시켜주는 유틸입니다.',
+        redirect: 'NotificationPage',
       },
     ],
   },
