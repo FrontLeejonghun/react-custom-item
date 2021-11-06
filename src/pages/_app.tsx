@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { AppProps } from 'next/app';
 import { GNBLayout } from 'components';
 
+import 'styles/global.scss';
+
 function App({ Component, pageProps }: AppProps) {
   const [root, setRoot] = useState<HTMLElement>();
 

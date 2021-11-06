@@ -7,5 +7,5 @@ const cx = classNames.bind(styles);
 export const UseResizePage = () => {
   const browserSize = useResize();
 
-  return <div>browser-width : {browserSize}px</div>;
+  return <div className={cx('size')}>browser-width : {browserSize}px</div>;
 };
