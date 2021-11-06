@@ -12,5 +12,5 @@ export const useResize = () => {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  return { browserSize };
+  return browserSize;
 };
