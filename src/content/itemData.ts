@@ -22,6 +22,11 @@ const itemData = [
         description: '브라우저 노티피케이션을 실행 시켜주는 유틸입니다.',
         redirect: 'NotificationPage',
       },
+      {
+        key: 'OnScreenObserver',
+        description: '옵저버를 사용해 인피니티 스크롤을 조금 더 편하게 사용합니다.',
+        redirect: 'OnScreenObserver',
+      },
     ],
   },
   {
