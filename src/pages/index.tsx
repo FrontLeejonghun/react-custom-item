@@ -10,31 +10,30 @@ const Home: NextPage = () => {
   };
 
   const item = itemData;
+
   return (
     <>
-      <div className={'main-wrap'}>
-        <ul>
-          {item.map((mainItem) => {
-            return (
-              <dl key={mainItem.key}>
-                <dt>{mainItem.key}</dt>
-                {mainItem.itemList.map((subItem, index) => {
-                  return (
-                    <>
-                      <dd className={'sub-key'} onClick={() => redirectRouter(subItem.redirect)}>
-                        {subItem.key}
-                      </dd>
-                      <dd className={'sub-description'} key={index}>
-                        {subItem.description}
-                      </dd>
-                    </>
-                  );
-                })}
-              </dl>
-            );
-          })}
-        </ul>
-      </div>
+      {item.map((item) => {
+        return (
+          <>
+            <h1 className={'category'} key={item.key}>
+              {item.key}
+            </h1>
+            <div className={'card-wrap'}>
+              {item.itemList.map((v) => {
+                return (
+                  <div className="card-item" key={v.key} onClick={() => redirectRouter(v.redirect)}>
+                    <dl>
+                      <dt className={'title'}>Title : {v.key} </dt>
+                      <dd className={'description'}>description : {v.description}</dd>
+                    </dl>
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        );
+      })}
     </>
   );
 };

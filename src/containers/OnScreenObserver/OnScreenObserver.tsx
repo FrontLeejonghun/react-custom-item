@@ -25,10 +25,10 @@ export const OnScreenObserver = () => {
 
   return (
     <div className={cx('wrap')}>
-      {array.map((v) => {
+      {array.map((v, index) => {
         return (
           <div key={v} className={cx(['card', `card-${v}`])}>
-            {v}
+            {index}
           </div>
         );
       })}

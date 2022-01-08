@@ -33,9 +33,9 @@ const itemData = [
     key: 'components',
     itemList: [
       {
-        key: '컴포넌트',
+        key: 'FileUpload',
         redirect: 'FileUploadPage',
-        description: '작업예정입니다',
+        description: 'FileUpload를 할수 있는 컴포넌트 입니다.',
       },
     ],
   },

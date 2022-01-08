@@ -1,32 +1,35 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState, useCallback } from 'react';
 import classNames from 'classnames/bind';
 import { BaseFileUpload } from 'components';
+import { fileToBlob } from 'utils';
 import styles from './FileUploadPage.module.scss';
 
 const cx = classNames.bind(styles);
 
 export const FileUploadPage = () => {
-  const dd = (e: ChangeEvent<HTMLInputElement> | any): void => {
-    let selectFiles;
-    if (e.type === 'drop') selectFiles = e.dataTransfer.files;
-    else selectFiles = e.target.files[0];
-    if (selectFiles.length < 1) {
-      for (const file in selectFiles) {
-        console.log('ddd', file);
-      }
-    } else {
-      console.log('ddd', selectFiles);
-    }
+  const { makeFileToBlob, revokeBlobURL } = fileToBlob();
+  const [blobURL, setBlobURL] = useState<string>('');
+
+  const getFile = (file: ChangeEvent<HTMLInputElement> | any): void => {
+    setBlobURL(makeFileToBlob(file));
   };
+
+  const resetFile = useCallback(() => {
+    revokeBlobURL(blobURL);
+    setBlobURL('');
+  }, []);
 
   return (
     <div className={cx('file-upload-page-wrap')}>
       <BaseFileUpload
-        onChange={dd}
+        blobURL={blobURL}
+        disabled={blobURL !== ''}
+        resetFile={resetFile}
+        onChange={getFile}
         fileSize={10}
-        multiple={true}
-        accept={'mp3,aac,ac3,ogg,flac,wav,avi,mp4,mov,wmv,flv,mkv,svg'}
+        accept={'jpg,png,jpeg,svg'}
       />
+      <p>{blobURL}</p>
     </div>
   );
 };

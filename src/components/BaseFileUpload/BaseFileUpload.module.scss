@@ -1,30 +1,63 @@
-.file-upload {
-  width: 300px;
-  height: 300px;
+.file-upload-wrap {
+  position: relative;
+  width: 272px;
+  height: 272px;
+  transition: 0.3s all ease;
   border: 2px #dedede dashed;
-  background: rgba(244, 244, 248, 0.2);
-  transition: .3s all ease;
+  border-radius: 42px;
+  background: #f2f2f2;
 
-  &.isDragging{
-    background: rgba(244, 244, 248, 0.6);
-    transition: .3s all ease;
+  &.isDragging {
+    transition: 0.3s all ease;
+    background: #c9c7c7;
   }
 
-  .file-input {
+  &.is-upload {
+    border: none;
+  }
+
+  .file-upload-input {
+    display: none;
     width: 100%;
     height: 100%;
     opacity: 0;
-    display: none;
   }
+
+
+}
+
+.file-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #2a2a2c;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 31px;
+  gap: 16px;
+
+
 }
 
 
-.file-upload-label{
-  width: 100%;
-  height:100%;
+.file-upload-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-weight: bold;
+  width: 82px;
+  height: 82px;
+  transition: 0.3s all ease;
+  border-radius: 50%;
+  background: #2a2a2c;
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.3s all ease;
+    background: #000;
+  }
+
+
 }
