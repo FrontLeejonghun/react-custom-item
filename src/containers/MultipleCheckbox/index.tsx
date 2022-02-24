@@ -6,7 +6,7 @@ type CheckboxItem = {
   checked: boolean;
 };
 
-const Test2 = () => {
+export const MultipleCheckbox = () => {
   const [checkboxArray, setCheckboxArray] = useState<CheckboxItem[]>([
     {
       id: 'a123',
@@ -52,5 +52,3 @@ const Test2 = () => {
     </div>
   );
 };
-
-export default Test2;

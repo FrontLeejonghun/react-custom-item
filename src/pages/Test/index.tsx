@@ -19,17 +19,7 @@ const Test = () => {
     }
   };
 
-  const handleDragIn = useCallback((e: DragEvent): void => {
-    e.preventDefault();
-    e.stopPropagation();
-  }, []);
-
-  const handleDragOut = useCallback((e: DragEvent): void => {
-    e.preventDefault();
-    e.stopPropagation();
-  }, []);
-
-  const handleDragOver = useCallback((e: DragEvent): void => {
+  const handleDrag = useCallback((e: DragEvent): void => {
     e.preventDefault();
     e.stopPropagation();
   }, []);
@@ -54,21 +44,21 @@ const Test = () => {
 
   const initEvents = useCallback((): void => {
     if (dragRef.current !== null) {
-      dragRef.current.addEventListener('dragenter', handleDragIn);
-      dragRef.current.addEventListener('dragleave', handleDragOut);
-      dragRef.current.addEventListener('dragover', handleDragOver);
+      dragRef.current.addEventListener('dragenter', handleDrag);
+      dragRef.current.addEventListener('dragleave', handleDrag);
+      dragRef.current.addEventListener('dragover', handleDrag);
       dragRef.current.addEventListener('drop', handleDrop);
     }
-  }, [handleDragIn, handleDragOut, handleDragOver, handleDrop]);
+  }, [handleDrag, handleDrop]);
 
   const resetEvents = useCallback((): void => {
     if (dragRef.current !== null) {
-      dragRef.current.removeEventListener('dragenter', handleDragIn);
-      dragRef.current.removeEventListener('dragleave', handleDragOut);
-      dragRef.current.removeEventListener('dragover', handleDragOver);
+      dragRef.current.removeEventListener('dragenter', handleDrag);
+      dragRef.current.removeEventListener('dragleave', handleDrag);
+      dragRef.current.removeEventListener('dragover', handleDrag);
       dragRef.current.removeEventListener('drop', handleDrop);
     }
-  }, [handleDragIn, handleDragOut, handleDragOver, handleDrop]);
+  }, [handleDrag, handleDrop]);
 
   useEffect(() => {
     initEvents();

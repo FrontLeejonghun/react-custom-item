@@ -5,31 +5,23 @@ import itemData from 'content/itemData';
 const Home: NextPage = () => {
   const router = useRouter();
 
-  const redirectRouter = (path: string) => {
-    return router.push(path);
-  };
-
-  const item = itemData;
+  const redirectRouter = (path: string) => router.push(path);
 
   return (
     <>
-      {item.map((item) => {
+      {itemData.map((item) => {
         return (
           <>
-            <h1 className={'category'} key={item.key}>
-              {item.key}
-            </h1>
-            <div className={'card-wrap'}>
-              {item.itemList.map((v) => {
-                return (
-                  <div className="card-item" key={v.key} onClick={() => redirectRouter(v.redirect)}>
-                    <dl>
-                      <dt className={'title'}>Title : {v.key} </dt>
-                      <dd className={'description'}>description : {v.description}</dd>
-                    </dl>
-                  </div>
-                );
-              })}
+            <h1 className={'category'}>{item.parentKey}</h1>
+            <div className={'card-wrap'} key={item.parentKey}>
+              {item.itemList.map((v) => (
+                <div className="card-item" key={v.key} onClick={() => redirectRouter(v.redirect)}>
+                  <dl>
+                    <dt className={'title'}>Title : {v.key} </dt>
+                    <dd className={'description'}>description : {v.description}</dd>
+                  </dl>
+                </div>
+              ))}
             </div>
           </>
         );
